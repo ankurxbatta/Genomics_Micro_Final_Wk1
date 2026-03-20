@@ -57,7 +57,7 @@ conda activate partner_a_nanoplot
 NanoPlot --help
 ```
 
-## Setting up Docker
+## Setting up Docker - B1
 
 #### Dorado is a high-performance, open-source command-line basecaller developed by **Oxford Nanopore Technologies** (ONT) to convert raw electrical signals (POD5/Fast5) into DNA/RNA sequences.
 
@@ -77,3 +77,5 @@ Step 2: Run Docker
 #| eval: false
 docker run --rm -it nanoporetech/dorado:latest dorado --help
 ```
+
+## **The R Data Challenge (Wrangling & Visualization)**
