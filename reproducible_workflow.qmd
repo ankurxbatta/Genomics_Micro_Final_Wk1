@@ -1,6 +1,5 @@
 ---
 title: "reproducible_workflow"
-<<<<<<< HEAD
 author: "Kimia Mansouri(B1)"
 format: html
 editor: visual
@@ -114,5 +113,4 @@ Dorado is a high-performance, open-source command-line basecaller developed by *
 #open the terminal
 docker pull --platform linux/amd64 nanoporetech/dorado:latest
 docker run --rm --platform linux/amd64 -it nanoporetech/dorado:latest --help
->>>>>>> 51e47c31a628fec125eac5831fdac713ad0c5cf3
 ```
