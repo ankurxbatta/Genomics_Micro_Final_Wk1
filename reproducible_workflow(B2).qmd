@@ -48,5 +48,22 @@ library("tidyverse")
 ```
 
 ```{r}
-yeast_mata_data <- read.csv(yeast_genome_metadata.csv)
+yeast_mata_data <- read.csv("yeast_genome_metadata.csv")
+yeast_mata_data_filtered <- yeast_mata_data%>%
+  filter(gc_content < 40)%>% 
+  mutate(quality_status = if_else(sequencing_depth > 50, "High", "Low"))
+
+high_quality_samples <- yeast_mata_data_filtered%>%
+  filter(quality_status == "High") %>% select(sample_id)
+
+high_quality_samples_vector <- high_quality_samples$sample_id
+write_csv(yeast_mata_data_filtered, "partner_Krish(B2)_filtered.csv")
+
+```
+
+```{r}
+ggplot(data = yeast_mata_data_filtered, aes(x = sequencing_depth)) +
+  geom_histogram() +
+  labs(title = "Yeast_meta_data", x = "sequencing_depth") +
+  theme_minimal()
 ```
