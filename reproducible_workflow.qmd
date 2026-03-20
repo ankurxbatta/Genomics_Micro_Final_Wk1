@@ -1,0 +1,118 @@
+---
+title: "reproducible_workflow"
+<<<<<<< HEAD
+author: "Kimia Mansouri(B1)"
+format: html
+editor: visual
+toc : true
+---
+
+```{r}
+#| eval: false 
+#| echo: false
+library ("tidyverse")
+```
+
+## Filtlong Setup Documentation - B1
+
+Step 1: Searching for filtlong
+
+```{bash}
+#| eval: false
+conda search -c bioconda filtlong 
+```
+
+Step 2: Create the environment
+
+```{bash}
+#| eval: false
+conda create --name partner_b_filtlong -y  
+```
+
+Step 3: Activate environment
+
+```{bash}
+#| eval: false
+conda activate partner_b_filtlong 
+```
+
+Step 4: Install Filtlong into environment
+
+```{bash}
+#| eval: false
+conda install -c bioconda filtlong -y
+```
+
+Step 4: Export into a yml file in an "envs" environment
+
+```{bash}
+#| eval: false
+conda env export --from-history > envs/partner_b_filtlong.yml
+```
+
+Step 5: Commit and push, proceed to import partner A's Tools
+
+```{bash}
+#| eval: false
+conda activate partner_a_nanoplot
+NanoPlot --help
+```
+
+## Setting up Docker 
+
+Step 1: Pull Docker
+
+```{bash}
+#| eval: false
+# In the terminal 
+docker pull nanoporetech/dorado:latest
+```
+
+Step 2: Run Docker
+
+```{bash}
+#| eval: false
+docker run --rm -it nanoporetech/dorado:latest dorado --help
+## Platform used: 
+--platform linux/amd64
+=======
+author: "Krish_(B2)"
+format: html
+editor: visual
+---
+
+## Filtlong setup
+
+Step 1: create environment
+
+```{bash}
+#| eval: false
+conda create --name partner_Krish(B1)_filtlong -y
+```
+
+Step 2: activate environment
+
+```{bash}
+#| eval: false
+conda activate partner_Krish(B1)_filtlong
+```
+
+Step 3: install filtlong
+
+```{bash}
+#| eval: false
+onda install -c bioconda filtlong
+```
+
+## Docker setup and Dorado info
+
+Dorado is a high-performance, open-source command-line basecaller developed by **Oxford Nanopore Technologies** (ONT) to convert raw electrical signals (POD5/Fast5) into DNA/RNA sequences.
+
+```{bash}
+#| eval: false
+#open the docker app on the desktop
+#open the terminal
+docker pull --platform linux/amd64 nanoporetech/dorado:latest
+docker run --rm --platform linux/amd64 -it nanoporetech/dorado:latest --help
+>>>>>>> 51e47c31a628fec125eac5831fdac713ad0c5cf3
+```
