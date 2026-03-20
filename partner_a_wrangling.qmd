@@ -1,0 +1,11 @@
+---
+title: "partner_a_task"
+format: html
+editor: visual
+---
+
+```{r}
+library("tidyverse")
+yeast_genome = read_csv("yeast_genome_metadata.csv")
+
+```

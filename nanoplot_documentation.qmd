@@ -52,3 +52,16 @@ conda env create -f envs/partner_b_nanoplot.yml -n partner_b_nanoplot
 conda activate partner_b_nanoplot
 NanoPlot --help
 ```
+
+# Docker
+
+```{bash}
+#| eval: false
+docker pull staphb/quast:5.3.0 --platform linux/amd64
+docker run -v -it taphb/quast:5.3.0 --help
+
+```
+
+## **why do we use staphb/quast**
+
+staphb/quast is used to evaluate and compare genome assemblies
