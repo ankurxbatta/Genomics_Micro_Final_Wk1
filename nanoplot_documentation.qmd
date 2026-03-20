@@ -1,0 +1,54 @@
+---
+title: "nanoplot"
+format: html
+editor: visual
+---
+
+# Documenting nanoplot
+
+## Step 1:
+
+```{bash}
+#| eval: false
+conda create --name partner_b_nanoplot -y  # -y means "yes" to all questions automatically
+```
+
+## Step 2:
+
+```{bash}
+#| eval: false
+conda activate partner_b_nanoplot
+```
+
+## Step 3:
+
+```{bash}
+#| eval: false
+conda install -c bioconda nanoplot -y
+```
+
+## Step 4:
+
+```{bash}
+#| eval: false
+mkdir envs
+```
+
+## Step 5:
+
+```{bash}
+#| eval: false
+# Example export command:
+conda env export --from-history > envs/partner_b_nanoplot.yml
+```
+
+# Importing env
+
+## Step 1: 
+
+```{bash}
+#| eval: false
+conda env create -f envs/partner_b_nanoplot.yml -n partner_b_nanoplot
+conda activate partner_b_nanoplot
+NanoPlot --help
+```
