@@ -57,14 +57,18 @@ conda activate partner_a_nanoplot
 NanoPlot --help
 ```
 
-## Setting up Docker 
+## Setting up Docker - B1
+
+#### Dorado is a high-performance, open-source command-line basecaller developed by **Oxford Nanopore Technologies** (ONT) to convert raw electrical signals (POD5/Fast5) into DNA/RNA sequences.
 
 Step 1: Pull Docker
 
 ```{bash}
 #| eval: false
 # In the terminal 
-docker pull nanoporetech/dorado:latest
+docker pull --platform linux/amd64 nanoporetech/dorado:latest
+## Platform used: 
+docker run --rm --platform linux/amd64 -it nanoporetech/dorado:latest --help
 ```
 
 Step 2: Run Docker
@@ -72,45 +76,6 @@ Step 2: Run Docker
 ```{bash}
 #| eval: false
 docker run --rm -it nanoporetech/dorado:latest dorado --help
-## Platform used: 
---platform linux/amd64
-=======
-author: "Krish_(B2)"
-format: html
-editor: visual
----
-
-## Filtlong setup
-
-Step 1: create environment
-
-```{bash}
-#| eval: false
-conda create --name partner_Krish(B1)_filtlong -y
 ```
 
-Step 2: activate environment
-
-```{bash}
-#| eval: false
-conda activate partner_Krish(B1)_filtlong
-```
-
-Step 3: install filtlong
-
-```{bash}
-#| eval: false
-onda install -c bioconda filtlong
-```
-
-## Docker setup and Dorado info
-
-Dorado is a high-performance, open-source command-line basecaller developed by **Oxford Nanopore Technologies** (ONT) to convert raw electrical signals (POD5/Fast5) into DNA/RNA sequences.
-
-```{bash}
-#| eval: false
-#open the docker app on the desktop
-#open the terminal
-docker pull --platform linux/amd64 nanoporetech/dorado:latest
-docker run --rm --platform linux/amd64 -it nanoporetech/dorado:latest --help
-```
+## **The R Data Challenge (Wrangling & Visualization)**
