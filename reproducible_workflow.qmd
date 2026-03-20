@@ -1,26 +1,41 @@
 ---
 title: "reproducible_workflow"
-author: "Krish"
+author: "Krish_(B2)"
 format: html
 editor: visual
 ---
 
-## Quarto
+## Filtlong setup
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+Step 1: create environment
 
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-
+```{bash}
+#| eval: false
+conda create --name partner_Krish(B1)_filtlong -y
 ```
 
-You can add options to executable code like this
+Step 2: activate environment
 
-```{r}
-
+```{bash}
+#| eval: false
+conda activate partner_Krish(B1)_filtlong
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+Step 3: install filtlong
+
+```{bash}
+#| eval: false
+onda install -c bioconda filtlong
+```
+
+## Docker setup and Dorado info
+
+Dorado is a high-performance, open-source command-line basecaller developed by **Oxford Nanopore Technologies** (ONT) to convert raw electrical signals (POD5/Fast5) into DNA/RNA sequences.
+
+```{bash}
+#| eval: false
+#open the docker app on the desktop
+#open the terminal
+docker pull --platform linux/amd64 nanoporetech/dorado:latest
+docker run --rm --platform linux/amd64 -it nanoporetech/dorado:latest --help
+```
