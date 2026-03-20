@@ -88,5 +88,11 @@ yeast_dataframe <- read_csv("yeast_genome_metadata.csv") %>%
   )) 
 high_quality_samples <- filter (yeast_dataframe, quality_status == "High") %>% select(sample_id)
 
-write_csv(high_quality_samples, "partner_b1_filtered.csv")
+high_quality_samples_vec <- high_quality_samples$sample_id
+write_csv(yeast_dataframe, "partner_b1_filtered.csv")
+
+ggplot (yeast_dataframe, aes(x= sequencing_depth)) +
+  geom_histogram (aes(color= quality_status, fill= quality_status)) +
+  ggtitle("Sequencing Depth Vs. Quality Status") +
+  theme_minimal()
 ```
