@@ -43,5 +43,10 @@ docker run --rm --platform linux/amd64 -it nanoporetech/dorado:latest --help
 ## Tidyverse setup
 
 ```{r}
+#| eco: "false"
+library("tidyverse")
+```
 
+```{r}
+yeast_mata_data <- read.csv(yeast_genome_metadata.csv)
 ```

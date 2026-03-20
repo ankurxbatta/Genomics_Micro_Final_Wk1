@@ -6,6 +6,24 @@ editor: visual
 
 ```{r}
 library("tidyverse")
-yeast_genome = read_csv("yeast_genome_metadata.csv")
+yeast_genome <- read_csv("yeast_genome_metadata.csv") %>% #reading the .csv file
+  filter (genome_size_mb > 12) %>% #removing all the data points less than 12
+  mutate(log_depth = log(sequencing_depth)) %>% # creating a new qualum whre I will save all the value sequencing_depth after taking the log
+  select (gc_content, genome_size_mb, sequencing_depth) %>% #selecting the columns which we need
+  write_csv("partner_a_filtered.csv") #savig the csv file
+
+yeast_genome_matrix <- as.matrix(yeast_genome) # cnverting the dataset to matrix form
+
+write.csv(yeast_genome_matrix, "partner_a_matrix.csv") # save as csv
+
+mean_gc_content <- mean(yeast_genome_matrix[,"gc_content"]) # taking mean
+mean_gc_content
+```
+
+```{r}
+ggplot(data = yeast_genome_matrix, aes(x = genome_size_mb, y = sequencing_depth)) +
+  geom_point() +
+  labs(title = "scatter plot", x = "genome_size_mb", y = "sequencing_depth") +
+  theme_minimal() #plotting the scatterplot
 
 ```
