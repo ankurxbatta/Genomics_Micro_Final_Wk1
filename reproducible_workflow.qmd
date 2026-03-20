@@ -79,3 +79,14 @@ docker run --rm -it nanoporetech/dorado:latest dorado --help
 ```
 
 ## **The R Data Challenge (Wrangling & Visualization)**
+
+```{r}
+yeast_dataframe <- read_csv("yeast_genome_metadata.csv") %>%
+  filter (gc_content < 40) %>%
+  mutate(quality_status = if_else (
+    sequencing_depth > 50, "High", "Low"
+  )) 
+high_quality_samples <- filter (yeast_dataframe, quality_status == "High") %>% select(sample_id)
+
+write_csv(high_quality_samples, "partner_b1_filtered.csv")
+```
