@@ -6,6 +6,16 @@ editor: visual
 
 ```{r}
 library("tidyverse")
-yeast_genome = read_csv("yeast_genome_metadata.csv")
+yeast_genome <- read_csv("yeast_genome_metadata.csv") %>%
+  filter (genome_size_mb > 12) %>%
+  mutate(log_depth = log(sequencing_depth)) %>%
+  select (gc_content, genome_size_mb, sequencing_depth) %>%
+  write_csv("partner_a_filtered.csv")
 
+yeast_genome_matrix <- as.matrix(yeast_genome) 
+
+write.csv(yeast_genome_matrix, "partner_a_matrix.csv")
+
+mean_gc_content <- mean(yeast_genome_matrix[,"gc_content"])
+mean_gc_content
 ```
